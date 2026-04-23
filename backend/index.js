@@ -5,7 +5,12 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(cors());
+// This allows all origins and methods, which fixes the "Preflight" error you see
+app.use(cors({
+  origin: '*', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // Routes mounted perfectly to match PDF requirements [cite: 16, 17]

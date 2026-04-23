@@ -19,8 +19,8 @@ Built with a modern glassmorphism UI, secure authentication, and a seamless user
 
 ## 📸 Screenshots
 
-<img src="https://github.com/user-attachments/assets/a6c9e3ae-f31e-4cb9-8d0d-65347e582905" width="100%" />
-<img src="https://github.com/user-attachments/assets/6006f4de-7f33-4917-bb92-c983ebba9530" width="100%" />
+<img width="834" height="904" alt="image" src="https://github.com/user-attachments/assets/a6c9e3ae-f31e-4cb9-8d0d-65347e582905" />
+<img width="1393" height="904" alt="image" src="https://github.com/user-attachments/assets/6006f4de-7f33-4917-bb92-c983ebba9530" />
 
 ---
 

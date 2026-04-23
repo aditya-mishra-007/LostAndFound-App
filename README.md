@@ -5,7 +5,9 @@
 ![UI/UX](https://img.shields.io/badge/UI-Glassmorphism-purple)
 
 A full-stack MERN application that helps students and faculty **report, search, and recover lost items on campus**.
-Designed with a modern glassmorphism UI, secure authentication, and a smooth user experience.
+Built with a modern glassmorphism UI, secure authentication, and a seamless user experience.
+
+> 💡 Designed to solve real campus problems by making lost item recovery fast, simple, and organized.
 
 ---
 
@@ -17,8 +19,8 @@ Designed with a modern glassmorphism UI, secure authentication, and a smooth use
 
 ## 📸 Screenshots
 
-<img width="834" height="904" alt="image" src="https://github.com/user-attachments/assets/a6c9e3ae-f31e-4cb9-8d0d-65347e582905" />
-<img width="1393" height="904" alt="image" src="https://github.com/user-attachments/assets/6006f4de-7f33-4917-bb92-c983ebba9530" />
+<img src="https://github.com/user-attachments/assets/a6c9e3ae-f31e-4cb9-8d0d-65347e582905" width="100%" />
+<img src="https://github.com/user-attachments/assets/6006f4de-7f33-4917-bb92-c983ebba9530" width="100%" />
 
 ---
 
@@ -78,8 +80,8 @@ Lost-Found-System/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Lost-Found-System.git
-cd Lost-Found-System
+git clone https://github.com/aditya-mishra-007/LostAndFound-App
+cd LostAndFound-App
 ```
 
 ---

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // 🔥 Added useEffect
 import API from '../api/axiosInstance';
 import { useNavigate, Link } from 'react-router-dom';
 import { UserPlus } from 'lucide-react';
@@ -6,17 +6,29 @@ import { UserPlus } from 'lucide-react';
 const Register = () => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false); // 🔥 Added loading state to manage button text
   const navigate = useNavigate();
+
+  // 🔥 NEW: Instant Background Pre-Warm Hook to spin up the container immediately on mount
+  useEffect(() => {
+    API.get('/')
+      .then(() => console.log("Lost & Found backend pre-warmed from registration node."))
+      .catch((err) => console.log("Pre-warm signal transmitted. Spinning up container..."));
+  }, []);
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+    setLoading(true); // 🔥 Trigger button loading state
+    
     try {
       await API.post('/register', formData);
       navigate('/login');
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed');
+      setLoading(false); // 🔥 Re-enable button if something goes wrong
     }
   };
 
@@ -25,6 +37,7 @@ const Register = () => {
       <div className="glass-card" style={{ width: '100%', maxWidth: '400px' }}>
         <h2 className="text-center mb-4"><UserPlus className="me-2" /> Register</h2>
         {error && <div className="alert alert-danger">{error}</div>}
+        
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label">Full Name</label>
@@ -38,8 +51,13 @@ const Register = () => {
             <label className="form-label">Password</label>
             <input type="password" name="password" className="form-control" onChange={handleChange} required />
           </div>
-          <button type="submit" className="btn btn-primary w-100 mt-3">Create Account</button>
+          
+          {/* 🔥 UPDATED: Interactive feedback indicator text during cloud spin up */}
+          <button type="submit" disabled={loading} className="btn btn-primary w-100 mt-3">
+            {loading ? 'Waking up cloud server & verifying...' : 'Create Account'}
+          </button>
         </form>
+        
         <div className="text-center mt-3">
           <small>Already have an account? <Link to="/login" className="text-info">Login here</Link></small>
         </div>
